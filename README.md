@@ -3,6 +3,7 @@
 A responsive task management dashboard built for **Mohfasa Project Lab – Selection Assignment 01**. Users can view, create, search, filter, update and delete tasks in one place, on both mobile and desktop.
 
 **Live demo:** https://abhishek-si1.github.io/mohfasa-taskboard/
+
 **Repository:** https://github.com/Abhishek-si1/mohfasa-taskboard
 
 ## Screenshots
