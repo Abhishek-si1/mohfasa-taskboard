@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohfasa TaskBoard</title>
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false">🌙 Dark</button>
+    <h1>Mohfasa TaskBoard</h1>
+    <p>Manage all your tasks in one place</p>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-label="Task statistics">
+      <div class="stat-card"><span data-count="All">0</span><p>Total</p></div>
+      <div class="stat-card tone-warn"><span data-count="Pending">0</span><p>Pending</p></div>
+      <div class="stat-card tone-info"><span data-count="In Progress">0</span><p>In Progress</p></div>
+      <div class="stat-card tone-good"><span data-count="Completed">0</span><p>Completed</p></div>
+    </section>
+
+    <section class="panel" aria-label="Add task">
+      <h2>Add New Task</h2>
+      <form id="taskForm" novalidate>
+        <label for="title">Title *</label>
+        <input type="text" id="title" placeholder="e.g. Design login page" />
+        <small id="titleError" class="error"></small>
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="3" placeholder="Task details..."></textarea>
+
+        <div class="row">
+          <div>
+            <label for="priority">Priority</label>
+            <select id="priority"></select>
+          </div>
+          <div>
+            <label for="status">Status</label>
+            <select id="status"></select>
+          </div>
+        </div>
+        <button type="submit" class="btn primary">Add Task</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-label="Tasks">
+      <div class="controls">
+        <input type="search" id="searchInput" placeholder="Search by title..." />
+        <select id="filterStatus"></select>
+        <button type="button" id="clearCompleted" class="btn secondary tone-bad">Clear completed</button>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty" hidden>No tasks found. Try changing your search or add a new task.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
