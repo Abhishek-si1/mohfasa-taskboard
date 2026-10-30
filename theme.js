@@ -1,8 +1,10 @@
-// theme.js - runs before first paint so there is no flash of the wrong theme
+// theme.js
+// Loaded in <head> so the saved theme is applied before the page paints
+// (prevents a flash of the wrong theme).
 try {
-  document.documentElement.dataset.theme =
-    localStorage.getItem("mohfasaTheme") ||
-    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const savedTheme = localStorage.getItem("mohfasaTheme");
+  const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
 } catch {
-  /* storage unavailable: fall back to the default light theme */
+  // Storage unavailable: keep the default light theme.
 }

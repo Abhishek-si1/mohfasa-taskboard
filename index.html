@@ -15,6 +15,7 @@
   </header>
 
   <main class="container">
+    <!-- Dashboard: counts are filled in by script.js -->
     <section class="stats" aria-label="Task statistics">
       <div class="stat-card"><span data-count="All">0</span><p>Total</p></div>
       <div class="stat-card tone-warn"><span data-count="Pending">0</span><p>Pending</p></div>
@@ -22,6 +23,7 @@
       <div class="stat-card tone-good"><span data-count="Completed">0</span><p>Completed</p></div>
     </section>
 
+    <!-- Add task form: dropdown options are filled in by script.js -->
     <section class="panel" aria-label="Add task">
       <h2>Add New Task</h2>
       <form id="taskForm" novalidate>
@@ -46,6 +48,7 @@
       </form>
     </section>
 
+    <!-- Search, filter and task list -->
     <section class="panel" aria-label="Tasks">
       <div class="controls">
         <input type="search" id="searchInput" placeholder="Search by title..." />
@@ -57,6 +60,7 @@
     </section>
   </main>
 
+  <!-- Feedback message shown after each action -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
